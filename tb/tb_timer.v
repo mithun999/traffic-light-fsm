@@ -38,7 +38,7 @@ wire done;
         end
     endtask
  
-    // ---- task: wait N ticks ----
+    //  task: wait N ticks 
     task wait_ticks;
         input integer n;
         integer i;
@@ -105,7 +105,7 @@ wire done;
             $display("PASS: reset mid-count works correctly");
         wait_ticks(5);
  
-        $display("\n=== ALL SCENARIOS DONE ===\n");
+        $display("\nALL SCENARIOS DONE \n");
         $finish;
     end
 endmodule

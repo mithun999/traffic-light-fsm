@@ -7,7 +7,7 @@ module traffic_fsm #(
 )
 
 (input  wire clk,
-    input  wire  rst_n,      // active-low asyn
+    input  wire  rst_n,      // active-low asynchronus rese
     input  wire   ped_req,    // pedestrian button (which can be pressed by the pedestrians)
     input  wire    emergency, // for emergency vehicles  such as ambulances
     output reg [2:0] ns_light,
@@ -95,9 +95,6 @@ end
         end
     end
     
-    
-    
-
         // combinational logic
         always@(*)begin
             next_state=state;
@@ -132,7 +129,7 @@ end
             EW_YELLOW: ew_light = YELLOW;
             PED_WALK:  begin ped_walk = 1; ped_dont = 0; end
             PED_FLASH: ped_dont = flash_cnt[0]; // toggles each flash
-            EMERGENCY: ; // all RED already by default
+            EMERGENCY: ; // all RED in case of emergency
         endcase
     end
  
