@@ -1,6 +1,6 @@
 // this is used to count down
  module timer #(
-    parameter WIDTH  = 8,           // counter bit-width
+    parameter WIDTH  = 8,           // counter bit width
     parameter PERIOD = 30           // default count value
 )(
     input  wire             clk,
@@ -19,7 +19,7 @@
             done  <= 1'b0;
         end else begin
             done <= 1'b0; // default: no pulse
- 
+  
             if (load) begin
                 count <= period - 1;
             end else if (en) begin
